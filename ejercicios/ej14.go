@@ -6,5 +6,16 @@ package ejercicios
 // escribir como suma de un elemento de as más un
 // elemento de bs.
 func SumaElementos(as, bs []int, x int) bool {
-	panic("Not implemented")
+	
+	// Caso base (Si uno de los arrays es vacio, retorna falso)
+	if len(as) == 0 || len(bs) == 0{
+		return false
+	}
+
+	if as[0] + bs[0] == x{
+		return true
+	}
+
+	return SumaElementos(as[1:], bs, x) || SumaElementos(as, bs[1:], x)
+
 }
