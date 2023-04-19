@@ -4,6 +4,11 @@ package ejercicios
 // común divisor entre dos números enteros.
 // Nota: Se puede usar el algoritmo de Euclides para
 // resolver este problema.
+//	MCD(a, 0) = a
+//	MCD(a, b) = MCD (b, a mod b)
 func MCD(a, b int) int {
-	panic("Not implemented")
+	if b == 0{
+		return a
+	}
+	return MCD(b, a%b)
 }
